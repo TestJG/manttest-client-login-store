@@ -109,7 +109,7 @@ const loginEffects =
               ? LoginEvents.loginCompleted()
               : LoginEvents.loginFailed(r.error))
             .timeout(10000, Observable.of(LoginEvents.loginFailed("Service is unavailable right now")))
-            .startWith(LoginEvents.loginStarted.create())
+            .startWith(LoginEvents.loginStarted())
         );
 
 export const createLoginStore =
